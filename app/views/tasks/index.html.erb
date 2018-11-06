@@ -1,10 +1,12 @@
-<h1 class="title">My Tasks</h1>
+<h1 class="title"><i class="fas fa-list-ul"></i>My Tasks</h1>
 
 <h3>To do:</h3>
 
 <ul><% @tasks.each do |task| %>
-  <li><%= link_to task.title, task_path(task) %><i class="fas fa-trash-alt"></i></li>
+  <li><%= link_to task.title, task_path(task) %></li>
+  <i class="fas fa-trash-alt"><%= link_to "Delete", destroy_path(task) %></i>
   <% end %>
 </ul>
 
 <i class="far fa-plus-square"></i><%= link_to "Add a new task", new_task_path %>
+
